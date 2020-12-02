@@ -1,0 +1,37 @@
+.b-react-geocoder {
+  position: absolute;
+  top: 3rem;
+  left: 30%;
+  transform: translateX(-60%);
+  width: 62%;
+  z-index: 10;
+  input {
+    width: 85% !important;
+    margin-left: 5rem;
+    height: 4rem;
+    border-radius: 3rem;
+    border: 1px solid grey;
+    text-indent: 4rem;
+  }
+  button {
+    background: none;
+    border: none;
+    outline: none;
+    float: left;
+    display: none;
+  }
+  .suggestions-wrapper {
+    background-color: white;
+  }
+  .mapboxgl-ctrl-geocoder--icon-loading,
+  .mapboxgl-ctrl-geocoder--icon-close {
+    display: none !important;
+  }
+  .mapboxgl-ctrl-geocoder--icon-search {
+    width: 25px;
+    height: 25px;
+    position: absolute;
+    left: 5.5rem;
+    top: 3px;
+  }
+}

@@ -1,0 +1,11 @@
+.b-primereact-rating {
+  &.p-rating {
+    margin-bottom: 5rem;
+    .p-rating-icon {
+      font-size: 4rem;
+      color: orange;
+      margin: 0 1rem;
+      outline: none;
+    }
+  }
+}

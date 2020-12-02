@@ -1,0 +1,20 @@
+.calendar-container {
+  position: absolute;
+  z-index: 50;
+  top: 8rem;
+}
+.react-calendar button:enabled:hover,
+.react-calendar__tile--active:enabled:hover,
+.react-calendar__tile--active:enabled:focus,
+.react-calendar__tile--hasActive,
+.react-calendar__tile--active {
+  background: $color-aquaMarine !important;
+}
+
+.react-calendar__tile--now {
+  background: $color-lightGrey !important;
+}
+
+.react-calendar__month-view__days__day {
+  border-radius: 100%;
+}

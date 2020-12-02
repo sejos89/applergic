@@ -1,0 +1,45 @@
+.b-primereact-tieredMenu {
+  &.p-tieredmenu {
+    width: 75%;
+    height: auto;
+    // padding-top: 30px;
+    top: 0 !important;
+    left: 0 !important;
+    background: white;
+    margin-left: -30px;
+
+    ul {
+      height: 100%;
+      border: 1px solid grey;
+    }
+
+    .p-menuitem {
+      padding: 1.4vh 1.4vh 1.4vh 2.9vh;
+      // padding: 5% 5% 5% 10%;
+    }
+
+    .p-menuitem-text {
+      font-size: 2.25rem;
+      color: black;
+    }
+
+    .p-menuitem-icon {
+      font-size: 4rem;
+      color: black;
+      margin-right: 2rem;
+    }
+
+    .hide-menu {
+      padding-top: 3vh;
+      display: flex;
+      justify-content: flex-end;
+    }
+    .hide-menu span {
+      font-size: 1.75rem;
+    }
+
+    .aqua span {
+      color: rgb(38, 199, 220);
+    }
+  }
+}

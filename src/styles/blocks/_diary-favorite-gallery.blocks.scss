@@ -1,0 +1,34 @@
+.diary-favorite-image-container {
+  width: 72px;
+  height: 72px;
+  margin: 0;
+  border: 4px solid $color-question;
+  border-radius: 5px;
+  position: relative;
+
+  &--check {
+    border-color: $color-green-check;
+  }
+
+  &--remove {
+    border-color: $color-red-remove;
+  }
+}
+
+.diary-favorite-image {
+  width: 56px;
+  height: 56px;
+  object-fit: cover;
+}
+
+.diary-favorite-container {
+  background: $color-question-alpha;
+  border-top: 1px solid $color-lightGrey;
+  &--check {
+    background-color: $color-green-check-alpha;
+  }
+
+  &--remove {
+    background-color: $color-red-remove-alpha;
+  }
+}

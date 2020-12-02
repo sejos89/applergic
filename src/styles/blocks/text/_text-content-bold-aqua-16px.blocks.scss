@@ -1,0 +1,9 @@
+.b-text-content-bold-aqua-16px {
+  font-size: 2rem; //
+  font-weight: 600;
+  color: $color-aquaMarine;
+
+  &--grey {
+    color: $color-brownGrey;
+  }
+}

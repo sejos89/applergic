@@ -1,0 +1,14 @@
+@import 'src/styles/imports/settings.imports';
+
+.notes-form-submit {
+  display: inline;
+  border: none;
+  outline: none;
+  background: transparent;
+}
+
+.notes-form-input {
+  width: 50vw;
+  resize: none;
+  font-size: 1.25rem;
+}

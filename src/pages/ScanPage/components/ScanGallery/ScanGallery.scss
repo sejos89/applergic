@@ -1,0 +1,29 @@
+@import 'src/styles/imports/settings.imports';
+
+.scanGallery-image-container {
+  width: 192px;
+  height: 192px;
+  border: 10px solid $color-question;
+  border-radius: 10px;
+  position: relative;
+
+  &--check {
+    border-color: $color-green-check;
+  }
+
+  &--remove {
+    border-color: $color-red-remove;
+  }
+}
+
+.scanGallery-image-result {
+  max-width: 100%;
+  max-height: 100%;
+  padding: 1rem;
+  object-fit: cover;
+}
+
+.scanGallery-title {
+  width: 60%;
+  margin: 0 auto 5rem;
+}

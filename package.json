@@ -1,0 +1,63 @@
+{
+  "name": "applergic",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "@reach/combobox": "^0.11.2",
+    "@testing-library/jest-dom": "^5.11.5",
+    "@testing-library/react": "^11.1.0",
+    "@testing-library/user-event": "^12.1.10",
+    "axios": "^0.21.0",
+    "bootstrap": "^4.5.3",
+    "classnames": "^2.2.6",
+    "html2canvas": "^1.0.0-rc.7",
+    "html2pdf.js": "^0.9.2",
+    "i": "^0.3.6",
+    "moment": "^2.29.1",
+    "node-sass": "^4.14.1",
+    "npm": "^6.14.8",
+    "primeicons": "^4.0.0",
+    "primereact": "^5.0.1",
+    "qr-scanner": "^1.2.0",
+    "qs": "^6.9.4",
+    "react": "^17.0.1",
+    "react-calendar": "^3.2.1",
+    "react-dom": "^17.0.1",
+    "react-hook-form": "^6.10.1",
+    "react-loader-spinner": "^3.1.14",
+    "react-map-gl": "^5.2.10",
+    "react-map-gl-geocoder": "^2.1.6",
+    "react-qr-scanner": "0.0.10",
+    "react-router-dom": "^5.2.0",
+    "react-scripts": "4.0.0",
+    "react-transition-group": "^4.4.1",
+    "use-places-autocomplete": "^1.6.0",
+    "use-supercluster": "^0.2.9",
+    "web-vitals": "^0.2.4"
+  },
+  "scripts": {
+    "start-client": "react-scripts start",
+    "build": "react-scripts build && (cd server && yarn install)",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject",
+    "start": "cd server && yarn start"
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  }
+}

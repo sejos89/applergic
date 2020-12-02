@@ -1,0 +1,18 @@
+.b-btn {
+  background-color: $color-aquaMarine-alpha;
+  color: white;
+  font-size: 2rem;
+  font-weight: 600;
+  border: 0;
+  border-radius: 8px;
+  width: 100%;
+  height: 50px;
+
+  &--disabled {
+    background-color: $color-lightGrey-alpha;
+  }
+
+  &--warning {
+    background-color: $color-warmPink-alpha;
+  }
+}

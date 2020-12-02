@@ -1,0 +1,23 @@
+@import 'src/styles/imports/settings.imports';
+
+.yes-button {
+  width: 10rem;
+  height: 4rem;
+  background-color: $color-warmPink;
+  color: white;
+  font-weight: 600;
+  font-size: 2.5rem;
+  border: 0;
+  border-radius: 1rem;
+}
+
+.no-button {
+  width: 10rem;
+  height: 4rem;
+  background-color: $color-aquaMarine-alpha;
+  color: white;
+  font-weight: 600;
+  font-size: 2.5rem;
+  border: 0;
+  border-radius: 1rem;
+}

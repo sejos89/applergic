@@ -1,0 +1,19 @@
+@import 'styles/imports/settings.imports';
+@import 'styles/imports/generic.imports';
+@import 'styles/imports/blocks.imports';
+@import 'styles/imports/utilities.imports';
+@import 'styles/imports/elements.imports';
+
+button,
+input,
+textarea,
+a {
+  font-family: 'Montserrat', sans-serif;
+  // font-size: 1rem;
+  text-decoration: none;
+  outline: none;
+}
+
+ul {
+  list-style-type: none;
+}

@@ -1,0 +1,17 @@
+.restaurants-filter-button {
+  padding: 1.5rem 2rem;
+  background-color: white;
+  border-radius: 20px;
+  border: 1px solid rgb(168, 168, 168);
+  position: absolute;
+  top: 10rem;
+  left: 65%;
+  //   width: 100%;
+  z-index: 10;
+}
+
+.clicked-button {
+  background-color: rgb(248, 73, 113);
+  border: none;
+  color: white;
+}

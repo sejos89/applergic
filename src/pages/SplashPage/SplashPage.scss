@@ -1,0 +1,88 @@
+@import 'src/styles/imports/settings.imports';
+
+.homepage-header {
+  height: 40vh;
+}
+
+.homepage-title {
+  color: $color-titleBlack;
+  font-size: 5rem;
+  font-weight: 800;
+  margin-bottom: 0;
+}
+
+.homepage-subtitle {
+  font-size: 2.25rem;
+  color: $color-brownishGrey;
+  margin-bottom: 4rem;
+}
+
+.homepage-logo {
+  height: 60vh;
+  background-image: url('../../assets/images/logo-applergic-figuras-giro.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+//////////////////////////////////////////////////////////////////////////////////
+.carousel-container {
+  height: calc(100vh - 170px - 170px);
+}
+
+.carousel-title-container {
+  // height: 170px;
+  height: 20vh;
+}
+
+.carousel-title {
+  font-size: 2rem;
+  font-weight: 800;
+  margin-left: 3px;
+}
+
+.carousel-container {
+  height: calc(100vh - 20vh - 21vh);
+}
+
+.carousel-content {
+  text-align: center;
+  line-height: 1.7;
+  min-width: 240px;
+  padding: 0 40px;
+}
+
+.carousel-button-container {
+  height: 21vh;
+  max-width: 375px;
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+  padding: 0 30px;
+}
+
+@media screen and (max-height: 700px) {
+  .carousel-button-container {
+    height: 15vh;
+  }
+}
+
+@media screen and (max-height: 620px) {
+  .carousel-button-container {
+    height: 10vh;
+  }
+}
+
+.bullet {
+  width: 1rem;
+  height: 1rem;
+  background-color: $color-slateGrey-alpha;
+  border-radius: 50%;
+  display: inline-block;
+  margin-right: 15px;
+
+  &--not-selected {
+    width: 1.5rem;
+    height: 1.5rem;
+    background-color: $color-aquaMarine;
+  }
+}

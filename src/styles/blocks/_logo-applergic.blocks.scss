@@ -1,0 +1,11 @@
+.b-logo-applergic {
+  width: 25px;
+  height: 25px;
+  background-image: url('../../assets/images/logoApplergicFigurasGiro.png');
+  background-size: cover;
+
+  &--small {
+    width: 15px;
+    height: 15px;
+  }
+}
