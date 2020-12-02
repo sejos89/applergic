@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "engines": {
     "node": "12.x",
-    "yarn": "1.x"
+    "npm": "6.x"
   },
   "private": true,
   "dependencies": {
@@ -41,10 +41,10 @@
   },
   "scripts": {
     "start-client": "react-scripts start",
-    "build": "react-scripts build && (cd server && yarn install)",
+    "build": "react-scripts build && (cd server && npm install)",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "start": "cd server && yarn start"
+    "start": "cd server && npm start"
   },
   "eslintConfig": {
     "extends": [
