@@ -1,6 +1,10 @@
 {
   "name": "applergic",
   "version": "0.1.0",
+  "engines": {
+    "node": "12.x",
+    "yarn": "1.x"
+  },
   "private": true,
   "dependencies": {
     "@reach/combobox": "^0.11.2",
