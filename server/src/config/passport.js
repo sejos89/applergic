@@ -1,7 +1,7 @@
 const passport = require('passport');
 const LocalStrategy = require('passport-local').Strategy;
-const GoogleStrategy = require('passport-google-oauth20').Strategy;
-const uuid = require('uuid').v4;
+// const GoogleStrategy = require('passport-google-oauth20').Strategy;
+// const uuid = require('uuid').v4;
 const bcrypt = require('bcrypt');
 const User = require('../models/User');
 
@@ -99,45 +99,45 @@ passport.use(
   )
 );
 
-passport.use(
-  new GoogleStrategy(
-    {
-      clientID: process.env.GOOGLE_CLIENT_ID,
-      clientSecret: process.env.GOOGLE_CLIENT_SECRET,
-      callbackURL: '/api/auth/google/redirect',
-    },
-    (_accessToken, _refreshToken, profile, done) => {
-      // Profile contains out google user data
-      const { id: googleId, displayName, name, emails } = profile;
-      // User main email is in profile.emails[0]
-      const { value: email } = emails[0];
+// passport.use(
+//   new GoogleStrategy(
+//     {
+//       clientID: process.env.GOOGLE_CLIENT_ID,
+//       clientSecret: process.env.GOOGLE_CLIENT_SECRET,
+//       callbackURL: '/api/auth/google/redirect',
+//     },
+//     (_accessToken, _refreshToken, profile, done) => {
+//       // Profile contains out google user data
+//       const { id: googleId, displayName, name, emails } = profile;
+//       // User main email is in profile.emails[0]
+//       const { value: email } = emails[0];
 
-      // Find user with the same googleId and if does not exist create it.
-      User.findOne({ email })
-        .then((user) => {
-          // Create a random password and encrypt it so user field exists
-          // const salt = bcrypt.genSaltSync(12)
-          const hash = bcrypt.hashSync(uuid(), parseint(process.env.BCRYPT_ROUNDS) || 12);
+//       // Find user with the same googleId and if does not exist create it.
+//       User.findOne({ email })
+//         .then((user) => {
+//           // Create a random password and encrypt it so user field exists
+//           // const salt = bcrypt.genSaltSync(12)
+//           const hash = bcrypt.hashSync(uuid(), parseint(process.env.BCRYPT_ROUNDS) || 12);
 
-          // In case user is already in database, log the user with a valid cookie.
-          if (!user) {
-            const newUser = new User({
-              email,
-              googleId,
-              password: hash,
-            });
+//           // In case user is already in database, log the user with a valid cookie.
+//           if (!user) {
+//             const newUser = new User({
+//               email,
+//               googleId,
+//               password: hash,
+//             });
 
-            newUser.save().then(() => {
-              done(null, newUser);
-            });
-          } else {
-            done(null, user);
-          }
-        })
-        .catch((err) => done(err, null));
-    }
-  )
-);
+//             newUser.save().then(() => {
+//               done(null, newUser);
+//             });
+//           } else {
+//             done(null, user);
+//           }
+//         })
+//         .catch((err) => done(err, null));
+//     }
+//   )
+// );
 
 passport.serializeUser((user, done) => {
   done(null, user.id); //aquí, user.id o user._id da igual

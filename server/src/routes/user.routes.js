@@ -12,21 +12,21 @@ const uploadImages = require('../middlewares/images.middleware');
 const { uploadToCloudinary, deleteFromCloudinary } = require('../middlewares/images.middleware');
 const isAuth = require('../middlewares/isAuthenticated.middleware');
 const passport = require('passport');
-const { isValidObjectId, Mongoose } = require('mongoose');
+// const { isValidObjectId, Mongoose } = require('mongoose');
 require('../config/passport');
 
 //¿vamos a hacer el login con google o eliminamos esto?
-router.get(
-  '/google',
-  passport.authenticate('google', {
-    scope: ['profile', 'email'],
-  })
-);
+// router.get(
+//   '/google',
+//   passport.authenticate('google', {
+//     scope: ['profile', 'email'],
+//   })
+// );
 
-router.get('/google/redirect', passport.authenticate('google'), (req, res) => {
-  res.status(200).redirect(process.env.CLIENT_URL || 'http://localhost:3000');
-  res.status(200).json({ data: req.user }); //esta línea borrar en producción
-});
+// router.get('/google/redirect', passport.authenticate('google'), (req, res) => {
+//   res.status(200).redirect(process.env.CLIENT_URL || 'http://localhost:3000');
+//   res.status(200).json({ data: req.user }); //esta línea borrar en producción
+// });
 
 // get all the properties of the user
 router.get('/', [isAuth], (req, res) => {
