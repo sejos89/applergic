@@ -2,15 +2,12 @@ import './ScanSearch.scss';
 
 import { useContext, useEffect, useState } from 'react';
 import QrReader from 'react-qr-scanner';
-import imagen1 from '../../../../assets/images/imgQR/nesquik.jpg';
-import imagen2 from '../../../../assets/images/imgQR/queso-viejo.png';
-import imagen3 from '../../../../assets/images/imgQR/vino.png';
 import { Link } from 'react-router-dom';
 import { ScanContext } from '../context/ScanContext';
 import { getFood } from '../../../../shared/services/food';
 
 export default function ScanPage() {
-  const { item, setItem, step, setStep } = useContext(ScanContext);
+  const { setItem, setStep } = useContext(ScanContext);
 
   const [scan, setScan] = useState({ delay: 100, result: 'No result', facingMode: 'rear' });
 
@@ -27,7 +24,7 @@ export default function ScanPage() {
 
   const handleError = (err) => console.error(err);
 
-  const previewStyle = { width: 255, height: 255 };
+  const previewStyle = { width: 255 };
 
   const cameraButton = () =>
     scan.facingMode === 'rear' ? setScan({ facingMode: 'front' }) : setScan({ facingMode: 'rear' });
@@ -40,7 +37,9 @@ export default function ScanPage() {
         </Link>
       </div>
       <div className="mx-4 d-flex flex-column justify-content-center">
-        <p className="mb-5 b-text-content-semibold-black-21px">Escaneando...</p>
+        <p className="mb-5 b-text-content-semibold-black-21px p-scansearch-scanning">
+          Escaneando...
+        </p>
         <p className="mb-4 b-text-content-regular-grey-15px">
           Tan solo tienes que centrar el código <b>QR</b> del producto en el reacuadro.
         </p>

@@ -43,10 +43,10 @@ export default function LoginPage() {
   return (
     <div className="d-flex flex-column align-items-center loginpage-container">
       <div className="loginpage-header"></div>
-      <div className="loginpage-logo-container d-flex justify-content-center align-items-center">
+      {/* <div className="loginpage-logo-container d-flex justify-content-center align-items-center">
         <div className="b-logo-applergic b-logo-applergic--small"></div>
         <p className="loginpage-logo-title">Applergic</p>
-      </div>
+      </div> */}
       <div className="loginsection-container">
         <p className="loginpage-title u-text-align-left">¡Bienvenido de nuevo!</p>
         <p className="loginpage-paragraph u-text-align-left">
@@ -75,13 +75,13 @@ export default function LoginPage() {
             })}
           />
           {errors.password && (
-            <span className="text-invalid-form">
+            <p className="text-invalid-form">
               La contraseña debe tener mínimo 8 caracteres y al menos una mayúscula, una minúscula y
               un número
-            </span>
+            </p>
           )}
           {falseLogged && !errors.password && (
-            <span className="text-invalid-form">El usuario y/o la contraseña son incorrectos</span>
+            <p className="text-invalid-form">El usuario y/o la contraseña son incorrectos</p>
           )}
           <button className="b-btn mt-4 mb-1 loginpage-btn">Entrar</button>
         </form>

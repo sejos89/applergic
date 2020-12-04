@@ -1,4 +1,4 @@
-import { useCallback, useContext, useEffect, useRef, useState } from 'react';
+import { useContext, useEffect, useRef, useState } from 'react';
 import ReactMapGL, { Marker, Popup, FlyToInterpolator, GeolocateControl } from 'react-map-gl';
 import Geocoder from 'react-map-gl-geocoder';
 import useSupercluster from 'use-supercluster';
@@ -21,7 +21,7 @@ export default function SearchPage2() {
   const [viewport, setViewport] = useState({
     //supongo que aquí deberíamos poner algo para que salga por defecto en caso de que no detecte geolocalización.
     width: '100%',
-    height: '90vh',
+    height: '80vh',
     latitude: 40.416946,
     longitude: -3.703528,
     zoom: 10,

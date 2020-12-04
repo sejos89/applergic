@@ -2,12 +2,14 @@
 
 .backdrop-1 {
   height: 90vh;
+  // width: 100%;
   position: relative;
 }
 
 .backdrop-2 {
-  // width: 100%;
-  height: 90vh;
+  width: 100%;
+  max-width: 414px;
+  height: calc(100vh - 10vh);
   background-color: $color-brownishGrey-alpha;
   position: absolute;
   z-index: 50;
@@ -19,15 +21,15 @@
 
 .menu-footer {
   // width: 100%;
-  max-width: 375px;
-  height: 8vh;
+  max-width: 414px;
+  height: 10vh;
   position: fixed;
   align-items: center;
   bottom: 0;
   left: 0;
   right: 0;
   margin: 0 auto;
-  padding: 0 0 2rem 0;
+  padding: 0;
   background-color: white;
 }
 
@@ -37,6 +39,19 @@
 
 .homepage-logo-figure {
   margin-bottom: 9rem;
+}
+
+@media screen and (min-height: 814px) {
+  .backdrop-2 {
+    height: calc(814px - 10vh);
+  }
+  .menu-footer {
+    bottom: calc(100vh - 814px);
+  }
+  .homepage-logo-figure {
+    margin-bottom: 4rem;
+    margin-top: 8rem;
+  }
 }
 
 @media screen and (max-height: 760px) {
@@ -54,5 +69,18 @@
   }
   .homepage-logo-figure {
     margin: 1rem auto;
+  }
+}
+
+@media screen and (max-height: 620px) {
+  .img-logo-homepage {
+    width: 70px;
+  }
+  .homepage-logo-figure {
+    margin-top: 1rem;
+  }
+  .mi-guia-alimentaria {
+    margin-bottom: 1rem;
+    font-size: 1.75rem;
   }
 }

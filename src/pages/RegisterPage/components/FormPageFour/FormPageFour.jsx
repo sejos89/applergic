@@ -27,7 +27,7 @@ export default function FormPageFour() {
           </Link>
         </div>
       </div>
-      <figure className="mt-5">
+      <figure className="mt-5 check-perfect-figure">
         <img src={imagen} alt="" />
       </figure>
       <p className="b-text-content-semibold-black-21px px-1">

@@ -106,30 +106,30 @@ export default function HomePage() {
         <p className="b-text-content-regular-grey-14px mt-1">
           ¿Necesitas ayuda? Contactamos con emergencias.
         </p>
-        <ul className="menu-footer d-flex justify-content-around">
-          <li>
-            <span className="b-icon-aqua b-icon-aqua--L icon-home"></span>
-          </li>
-          <li>
-            <button
-              onClick={() => (user ? history.push('/favorites') : history.push('/login'))}
-              className="b-icon b-icon--4rem icon-star-empty b-btn-icon"
-            ></button>
-          </li>
-          <li>
-            <button
-              onClick={() => (user ? history.push('/diary') : history.push('/login'))}
-              className="b-icon b-icon--4rem icon-notebook b-btn-icon"
-            ></button>
-          </li>
-          {/* <li>
+      </div>
+      <ul className="menu-footer d-flex justify-content-around">
+        <li>
+          <span className="b-icon-aqua b-icon-aqua--L icon-home"></span>
+        </li>
+        <li>
+          <button
+            onClick={() => (user ? history.push('/favorites') : history.push('/login'))}
+            className="b-icon b-icon--4rem icon-star-empty b-btn-icon"
+          ></button>
+        </li>
+        <li>
+          <button
+            onClick={() => (user ? history.push('/diary') : history.push('/login'))}
+            className="b-icon b-icon--4rem icon-notebook b-btn-icon"
+          ></button>
+        </li>
+        {/* <li>
             <button
               onClick={() => (user ? history.push('/login') : history.push('/login'))}
               className="b-icon b-icon--4rem icon-share b-btn-icon"
             ></button>
           </li> */}
-        </ul>
-      </div>
+      </ul>
     </>
   );
 }

@@ -31,7 +31,7 @@ server.use(
 server.use(passport.initialize());
 server.use(passport.session());
 
-server.use('/api', appRouter);
+server.use('/', appRouter);
 
 //preguntar a Cristian qué es esto
 // server.use((err, req, res, next) => {

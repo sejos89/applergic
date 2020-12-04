@@ -88,10 +88,10 @@ export default function FormOne(props) {
           }
         />
         {props.errors.password && (
-          <span className="text-invalid-form">
+          <p className="text-invalid-form">
             La contraseña debe tener mínimo 8 caracteres y al menos una mayúscula, una minúscula y
             un número
-          </span>
+          </p>
         )}
       </label>
     </>

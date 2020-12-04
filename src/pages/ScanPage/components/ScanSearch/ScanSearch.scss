@@ -2,3 +2,9 @@
   border: 8px solid grey;
   border-radius: 20px;
 }
+
+@media screen and (max-height: 620px) {
+  .p-scansearch-scanning {
+    margin-bottom: 1rem !important;
+  }
+}

@@ -3,3 +3,9 @@
   font-weight: 800;
   color: $color-almostBlack;
 }
+
+@media screen and (max-height: 620px) {
+  .b-text-content-extrabold-black-40px {
+    font-size: 4rem;
+  }
+}

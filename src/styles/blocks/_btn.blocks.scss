@@ -16,3 +16,10 @@
     background-color: $color-warmPink-alpha;
   }
 }
+
+@media screen and (max-height: 620px) {
+  .b-btn {
+    height: 45px;
+    margin-top: 2rem !important;
+  }
+}
