@@ -24,7 +24,7 @@ export default function ScanPage() {
 
   const handleError = (err) => console.error(err);
 
-  const previewStyle = { width: 255 };
+  const previewStyle = { width: 255, height: 255 };
 
   const cameraButton = () =>
     scan.facingMode === 'rear' ? setScan({ facingMode: 'front' }) : setScan({ facingMode: 'rear' });
