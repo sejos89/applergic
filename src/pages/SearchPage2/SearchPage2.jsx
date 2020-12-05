@@ -42,32 +42,26 @@ export default function SearchPage2() {
   const mapRef = useRef();
   const geocoderContainerRef = useRef();
 
-  const switchRestaurantArr = () => {
-    const user_allergens = user.allergens.map((allergen) => allergen._id);
-
-    setFilteredRestaurants(!filteredRestaurants);
-    if (!filteredRestaurants) {
-      setRestaurants(
-        allRestaurants.filter(
-          (restaurant) =>
-            !user_allergens.find((item) =>
-              restaurant.allergens.map((allergen) => allergen._id).includes(item),
-            ),
-        ),
-      );
-    } else {
-      setRestaurants(allRestaurants);
-    }
-  };
-
   useEffect(() => {
     if (bounds) {
       getRestaurants(bounds).then((res) => {
         allRestaurants = res.data;
-        setRestaurants(allRestaurants);
+        if (filteredRestaurants) {
+          const user_allergens = user.allergens.map((allergen) => allergen._id);
+          setRestaurants(
+            allRestaurants.filter(
+              (restaurant) =>
+                !user_allergens.find((item) =>
+                  restaurant.allergens.map((allergen) => allergen._id).includes(item),
+                ),
+            ),
+          );
+        } else {
+          setRestaurants(allRestaurants);
+        }
       });
     }
-  }, [bounds]);
+  }, [bounds, filteredRestaurants]);
 
   const points = restaurants.map((restaurant) => ({
     type: 'Feature',
@@ -104,7 +98,7 @@ export default function SearchPage2() {
         <div ref={geocoderContainerRef} className="b-react-geocoder" />
         <button
           className={`restaurants-filter-button ${filteredRestaurants ? 'clicked-button' : ''}`}
-          onClick={switchRestaurantArr}
+          onClick={() => setFilteredRestaurants(!filteredRestaurants)}
         >
           Compatibles contigo
         </button>

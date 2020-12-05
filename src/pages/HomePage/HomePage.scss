@@ -9,7 +9,7 @@
 .backdrop-2 {
   width: 100%;
   max-width: 414px;
-  height: calc(100vh - 10vh);
+  height: calc(100vh - 8vh);
   background-color: $color-brownishGrey-alpha;
   position: absolute;
   z-index: 50;
@@ -20,7 +20,7 @@
 }
 
 .menu-footer {
-  height: 10vh;
+  height: 8vh;
   max-width: 375px;
   width: 100%;
   position: fixed;
@@ -44,7 +44,7 @@
 
 @media screen and (min-height: 814px) {
   .backdrop-2 {
-    height: calc(814px - 10vh);
+    height: calc(814px - 8vh);
   }
   .menu-footer {
     bottom: calc(100vh - 814px);
