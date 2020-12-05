@@ -67,7 +67,7 @@ export default function HomePage() {
             />
           </div>
           <div className="carousel-button-container d-flex flex-column justify-content-between">
-            <div className="carousel-button-pagination d-flex justify-content-center align-items-center">
+            <div className="carousel-button-pagination d-flex justify-content-around align-items-center">
               <span
                 className={slideCarousel === 0 ? 'bullet bullet--not-selected' : 'bullet'}
               ></span>

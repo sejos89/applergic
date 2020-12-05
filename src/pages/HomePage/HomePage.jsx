@@ -107,7 +107,7 @@ export default function HomePage() {
           ¿Necesitas ayuda? Contactamos con emergencias.
         </p>
       </div>
-      <ul className="menu-footer d-flex justify-content-around">
+      <ul className="menu-footer d-flex">
         <li>
           <span className="b-icon-aqua b-icon-aqua--L icon-home"></span>
         </li>

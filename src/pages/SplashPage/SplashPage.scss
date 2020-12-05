@@ -56,8 +56,14 @@
   max-width: 375px;
   width: 100%;
   position: fixed;
+  left: 50%;
+  transform: translate(-50%, 0);
   bottom: 0;
   padding: 0 30px;
+}
+
+.carousel-button-pagination {
+  padding: 0 10rem;
 }
 
 @media screen and (max-height: 700px) {
@@ -70,9 +76,9 @@
 }
 
 @media screen and (max-height: 620px) {
-  .carousel-button-container {
-    height: 13vh;
-  }
+  // .carousel-button-container {
+  //   height: 13vh;
+  // }
   .carousel-container {
     height: calc(100vh - 20vh - 13vh);
   }
@@ -93,7 +99,6 @@
   background-color: $color-slateGrey-alpha;
   border-radius: 50%;
   display: inline-block;
-  margin-right: 15px;
 
   &--not-selected {
     width: 1.5rem;
