@@ -78,7 +78,7 @@ export default function DiaryGallery() {
       <div className="mx-3 d-flex justify-content-end mb-2">
         <button
           onClick={() => setShowCalendar(!showCalendar)}
-          className="icon-calendar b-icon b-btn-icon"
+          className="icon-calendar b-icon b-btn-icon mx-2"
         ></button>
         {showCalendar && (
           <Calendar
