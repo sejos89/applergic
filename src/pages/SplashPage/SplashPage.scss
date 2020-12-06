@@ -24,13 +24,8 @@
   background-repeat: no-repeat;
   background-position: center;
 }
-//////////////////////////////////////////////////////////////////////////////////
-// .carousel-container {
-//   height: calc(100vh - 170px - 170px);
-// }
 
 .carousel-title-container {
-  // height: 170px;
   height: 15vh;
 }
 
@@ -41,7 +36,7 @@
 }
 
 .carousel-container {
-  height: calc(100vh - 15vh - 17vh);
+  height: calc(100vh - 15vh - 19vh);
 }
 
 .carousel-content {
@@ -52,7 +47,7 @@
 }
 
 .carousel-button-container {
-  height: 17vh;
+  height: 19vh;
   max-width: 375px;
   width: 100%;
   position: fixed;
@@ -66,29 +61,14 @@
   padding: 0 10rem;
 }
 
-// @media screen and (max-height: 700px) {
-//   .carousel-button-container {
-//     height: 15vh;
-//   }
-//   .carousel-container {
-//     height: calc(100vh - 17vh - 15vh);
-//   }
-// }
-
-// @media screen and (max-height: 620px) {
-//   .carousel-container {
-//     height: calc(100vh - 20vh - 13vh);
-//   }
-// }
-
-// @media screen and (max-height: 560px) {
-//   .carousel-title-container {
-//     height: 15vh;
-//   }
-//   .carousel-container {
-//     height: calc(100vh - 15vh - 10vh);
-//   }
-// }
+@media screen and (max-height: 700px) {
+  .carousel-button-container {
+    height: 14vh;
+  }
+  .carousel-container {
+    height: calc(100vh - 17vh - 14vh);
+  }
+}
 
 .bullet {
   width: 1rem;
@@ -101,5 +81,11 @@
     width: 1.5rem;
     height: 1.5rem;
     background-color: $color-aquaMarine;
+  }
+}
+
+@media screen and (min-height: 814px) {
+  .carousel-button-container {
+    bottom: calc(100vh - 814px);
   }
 }
