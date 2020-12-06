@@ -16,6 +16,7 @@ const server = express();
 const buildPath = path.join(__dirname, '../..', 'build');
 
 server.use(express.static(buildPath));
+server.use('/api', appRouter);
 
 server.get('*', (req, res) => {
   res.sendFile(path.join(buildPath, 'index.html'), function (err) {
@@ -40,7 +41,7 @@ server.use(
 server.use(passport.initialize());
 server.use(passport.session());
 
-server.use('/api', appRouter);
+
 
 //preguntar a Cristian qué es esto
 // server.use((err, req, res, next) => {
