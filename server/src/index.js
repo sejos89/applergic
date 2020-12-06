@@ -14,9 +14,10 @@ const cookieSession = require('cookie-session');
 const server = express();
 
 const buildPath = path.join(__dirname, '../..', 'build');
+
 server.use(express.static(buildPath));
 
-server.get('/*', (req, res) => {
+server.get('*', (req, res) => {
   res.sendFile(path.join(buildPath, 'index.html'), function (err) {
     if (err) {
       res.status(500).send(err);
