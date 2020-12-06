@@ -16,13 +16,12 @@ const server = express();
 const buildPath = path.join(__dirname, '../..', 'build');
 server.use(express.static(buildPath));
 
-server.get('*', (req, res) => {
-  res.sendFile(path.join(buildPath, 'index.html')),
-    (err) => {
-      if (err) {
-        res.status(500).json(err.message);
-      }
-    };
+server.get('/*', (req, res) => {
+  res.sendFile(path.join(buildPath, 'index.html'), function (err) {
+    if (err) {
+      res.status(500).send(err);
+    }
+  });
 });
 
 // server.use(cors({ origin: true, credentials: true }));
@@ -40,7 +39,7 @@ server.use(
 server.use(passport.initialize());
 server.use(passport.session());
 
-server.use('/', appRouter);
+server.use('', appRouter);
 
 //preguntar a Cristian qué es esto
 // server.use((err, req, res, next) => {
