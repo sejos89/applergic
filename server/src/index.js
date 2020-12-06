@@ -16,6 +16,15 @@ const server = express();
 const buildPath = path.join(__dirname, '../..', 'build');
 server.use(express.static(buildPath));
 
+server.get('*', (req, res) => {
+  res.sendFile(path.join(buildPath, 'index.html')),
+    (err) => {
+      if (err) {
+        res.status(500).json(err.message);
+      }
+    };
+});
+
 // server.use(cors({ origin: true, credentials: true }));
 
 server.use(express.urlencoded({ extended: true }));
