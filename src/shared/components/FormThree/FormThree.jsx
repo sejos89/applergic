@@ -36,14 +36,13 @@ export default function FormThree({ allergens, userAllergens, getValues, registe
     }
   }, []);
 
-  console.log(allergens);
   return (
     <>
       <div id="allergen-keys" className="allergen-keys-container">
         {Object.keys(allergens)
           .sort()
           .map((key) => (
-            <a href={'#' + key} name={key} className="allergen-key-button">
+            <a href={'#' + key} key={key} name={key} className="allergen-key-button">
               {key}
             </a>
           ))}

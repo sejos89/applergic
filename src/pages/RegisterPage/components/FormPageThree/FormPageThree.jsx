@@ -45,7 +45,14 @@ export default function FormPageThree() {
         Los elementos marcados serán identificados en tus búsquedas como peligrosos para ti.
       </p>
       <form onSubmit={handleSubmit(onSubmit)}>
-        {allergens && <FormThree allergens={allergens} getValues={getValues} register={register} />}
+        {allergens && (
+          <FormThree
+            allergens={allergens}
+            userAllergens={infoForm.form3.allergens}
+            getValues={getValues}
+            register={register}
+          />
+        )}
         <button className="b-btn b-btn my-5">Guardar</button>
       </form>
     </div>

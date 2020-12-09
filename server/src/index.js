@@ -12,6 +12,7 @@ const passport = require('passport');
 const cookieSession = require('cookie-session');
 
 const server = express();
+// server.use(cors({ origin: true, credentials: true }));
 
 const buildPath = path.join(__dirname, '../..', 'build');
 
@@ -38,8 +39,6 @@ server.get('*', (req, res) => {
     }
   });
 });
-
-// server.use(cors({ origin: true, credentials: true }));
 
 //preguntar a Cristian qué es esto
 // server.use((err, req, res, next) => {

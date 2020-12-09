@@ -12,7 +12,7 @@ export default function FormPageOne() {
   const { infoForm, setInfoForm, step, setStep } = useContext(FormContext);
   const [userExist, setUserExist] = useState(false);
 
-  const { register, handleSubmit, reset, errors, formState } = useForm({
+  const { register, handleSubmit, errors, formState } = useForm({
     mode: 'onChange', // Para que la validacion se haga caracter de cada input
     defaultValues: {
       image: infoForm.form1.image,
@@ -23,7 +23,6 @@ export default function FormPageOne() {
   });
 
   const onSubmit = (data) => {
-    console.log(data);
     checkUsername(data.email).then((res) => {
       if (res.data) {
         setUserExist(true);

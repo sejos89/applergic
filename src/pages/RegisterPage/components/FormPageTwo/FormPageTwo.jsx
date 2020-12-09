@@ -7,7 +7,7 @@ import FormTwo from '../../../../shared/components/FormTwo/FormTwo';
 export default function FormPageTwo() {
   const { infoForm, setInfoForm, step, setStep } = useContext(FormContext);
 
-  const { register, handleSubmit, reset, errors } = useForm({
+  const { register, handleSubmit } = useForm({
     // mode: 'onChange',
     defaultValues: {
       emergency_name: infoForm.form2.emergency_name,
@@ -22,8 +22,6 @@ export default function FormPageTwo() {
     setInfoForm({ ...infoForm, form2: data });
     setStep(step + 1);
   };
-
-  console.log(infoForm);
 
   // Para deshabilitar el boton de submit si no se validan los campos del formulario
   // const { isValid } = formState;
