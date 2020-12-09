@@ -5,9 +5,11 @@ import './FavoritePage.scss';
 export default function FavoritePage() {
   return (
     <div className="d-flex flex-column justify-content-center pt-4">
-      <div className="mx-3 d-flex justify-content-end mb-2">
+      <div className="mx-3 mb-2">
         <Link to="/home" style={{ textDecoration: 'none' }}>
-          <button className="icon-letter-x b-icon b-btn-icon ml-1"></button>
+          <button className="b-text-btn d-flex align-items-center ml-1 b-btn-icon">
+            <span className="b-icon-aqua icon-left-arrow mr-2"></span>Volver
+          </button>
         </Link>
       </div>
       <p className="b-text-content-semibold-black-21px px-5 my-1">

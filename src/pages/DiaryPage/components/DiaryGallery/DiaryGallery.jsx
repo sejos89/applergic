@@ -73,11 +73,33 @@ export default function DiaryGallery() {
     });
   };
 
+  const setCalendar = () => {
+    setShowCalendar(!showCalendar);
+
+    if (!showCalendar) {
+      document.getElementById('backdrop-diarygallery-1').classList.add('backdrop-diarygallery-1');
+      document.getElementById('backdrop-diarygallery-2').classList.add('backdrop-diarygallery-2');
+    } else {
+      document
+        .getElementById('backdrop-diarygallery-1')
+        .classList.remove('backdrop-diarygallery-1');
+      document
+        .getElementById('backdrop-diarygallery-2')
+        .classList.remove('backdrop-diarygallery-2');
+    }
+  };
+
   return (
     <>
-      <div className="mx-3 d-flex justify-content-end mb-2">
+      <div id="backdrop-diarygallery-2"></div>
+      <div className="mx-3 d-flex justify-content-between mb-2">
+        <Link to="/home" style={{ textDecoration: 'none' }}>
+          <button className="b-text-btn d-flex align-items-center ml-1 b-btn-icon">
+            <span className="b-icon-aqua icon-left-arrow mr-2"></span>Volver
+          </button>
+        </Link>
         <button
-          onClick={() => setShowCalendar(!showCalendar)}
+          onClick={() => setCalendar()}
           className="icon-calendar b-icon b-btn-icon mx-2"
         ></button>
         {showCalendar && (
@@ -87,135 +109,137 @@ export default function DiaryGallery() {
             onClickDay={(value) => {
               setSelectedDate(value);
               setShowCalendar(!showCalendar);
+              document
+                .getElementById('backdrop-diarygallery-1')
+                .classList.remove('backdrop-diarygallery-1');
+              document
+                .getElementById('backdrop-diarygallery-2')
+                .classList.remove('backdrop-diarygallery-2');
             }}
           ></Calendar>
         )}
-        {/* <Link to="/home" style={{ textDecoration: 'none' }}>
-          <button className="icon-settings b-icon b-btn-icon ml-1"></button>
-        </Link> */}
-        <Link to="/home" style={{ textDecoration: 'none' }}>
-          <button className="icon-letter-x b-icon b-btn-icon ml-1"></button>
-        </Link>
       </div>
-      <p className="b-text-content-semibold-black-21px px-5 my-1">
-        Estos son los alimentos de tu Diario:
-      </p>
-      {!diaryEmpty && (
-        <p className="b-text-content-regular-grey-15px px-5">
-          Añade tus comentarios para completar tu información.
+      <div id="backdrop-diarygallery-1">
+        <p className="b-text-content-semibold-black-21px px-5 my-1">
+          Estos son los alimentos de tu Diario:
         </p>
-      )}
-      {diaryEmpty && (
-        <p className="b-text-content-regular-grey-15px px-5">
-          Tu diario está vacío para la fecha seleccionada.
-        </p>
-      )}
-      <div className="p-2">
-        {diaryFood?.map((item, index) => (
-          <div key={item._id}>
-            {showScanResult(item.food.allergens, user.allergens)}
-            <div
-              className={`row diary-favorite-container pt-2 pb-3 ${
-                result === 1
-                  ? 'diary-favorite-container--check'
-                  : result === 2
-                  ? 'diary-favorite-container--remove'
-                  : ''
-              }`}
-            >
-              <div className="col-4 d-flex align-items-center justify-content-center m-0">
-                <figure
-                  className={`diary-favorite-image-container d-flex align-items-center justify-content-center ${
-                    result === 1
-                      ? 'diary-favorite-image-container--check'
-                      : result === 2
-                      ? 'diary-favorite-image-container--remove'
-                      : ''
-                  }`}
-                >
-                  {result === 2 ? (
-                    <span className="icon-remove b-icon-diary-result-negative">
-                      <span className="path1"></span>
-                      <span className="path2"></span>
-                    </span>
-                  ) : result === 1 ? (
-                    <span className="icon-check b-icon-diary-result-positive">
-                      <span className="path1"></span>
-                      <span className="path2"></span>
-                    </span>
-                  ) : (
-                    <span className="icon-question b-icon-diary-result-question">
-                      <span className="path1"></span>
-                      <span className="path2"></span>
-                      <span className="path3"></span>
-                    </span>
-                  )}
-                  <img
-                    className="diary-favorite-image"
-                    src={item.food.picture}
-                    alt={item.food.name}
-                  />
-                </figure>
-              </div>
-              <div className="col-6 d-flex flex-column px-0 pt-1">
-                <p className="b-text-content-black-12px mb-1 mt-0">
-                  {moment(item.date).format('DD/MM/YYYY HH:mm')}
-                </p>
-                <p className="b-text-content-black-12px mb-1 mt-0">{item.food.name}</p>
-                <div className="b-text-content-regular-grey-12px my-0">
-                  {' '}
-                  Notas:
-                  <form onSubmit={handleSubmit(onSubmit)} className="d-flex">
-                    <label htmlFor="notes"></label>
-                    <textarea
-                      className="notes-form-input"
-                      name={item._id}
-                      id="notes"
-                      ref={register}
-                      defaultValue={item.notes}
-                      maxLength="100"
-                      disabled={formEnabled[index]}
-                    />
-                    {!formEnabled[index] && (
-                      <button className="notes-form-submit pr-0">
-                        <span className="icon-check b-icon b-icon--2rem">
-                          <span className="path1"></span>
-                          <span className="path2"></span>
-                        </span>
-                      </button>
+        {!diaryEmpty && (
+          <p className="b-text-content-regular-grey-15px px-5">
+            Añade tus comentarios para completar tu información.
+          </p>
+        )}
+        {diaryEmpty && (
+          <p className="b-text-content-regular-grey-15px px-5">
+            Tu diario está vacío para la fecha seleccionada.
+          </p>
+        )}
+        <div className="p-2">
+          {diaryFood?.map((item, index) => (
+            <div key={item._id}>
+              {showScanResult(item.food.allergens, user.allergens)}
+              <div
+                className={`row diary-favorite-container pt-2 pb-3 ${
+                  result === 1
+                    ? 'diary-favorite-container--check'
+                    : result === 2
+                    ? 'diary-favorite-container--remove'
+                    : ''
+                }`}
+              >
+                <div className="col-4 d-flex align-items-center justify-content-center m-0">
+                  <figure
+                    className={`diary-favorite-image-container d-flex align-items-center justify-content-center ${
+                      result === 1
+                        ? 'diary-favorite-image-container--check'
+                        : result === 2
+                        ? 'diary-favorite-image-container--remove'
+                        : ''
+                    }`}
+                  >
+                    {result === 2 ? (
+                      <span className="icon-remove b-icon-diary-result-negative">
+                        <span className="path1"></span>
+                        <span className="path2"></span>
+                      </span>
+                    ) : result === 1 ? (
+                      <span className="icon-check b-icon-diary-result-positive">
+                        <span className="path1"></span>
+                        <span className="path2"></span>
+                      </span>
+                    ) : (
+                      <span className="icon-question b-icon-diary-result-question">
+                        <span className="path1"></span>
+                        <span className="path2"></span>
+                        <span className="path3"></span>
+                      </span>
                     )}
-                  </form>
+                    <img
+                      className="diary-favorite-image"
+                      src={item.food.picture}
+                      alt={item.food.name}
+                    />
+                  </figure>
+                </div>
+                <div className="col-6 d-flex flex-column px-0 pt-1">
+                  <p className="b-text-content-black-12px mb-1 mt-0">
+                    {moment(item.date).format('DD/MM/YYYY HH:mm')}
+                  </p>
+                  <p className="b-text-content-black-12px mb-1 mt-0">{item.food.name}</p>
+                  <div className="b-text-content-regular-grey-12px my-0">
+                    {' '}
+                    Notas:
+                    <form onSubmit={handleSubmit(onSubmit)} className="d-flex">
+                      <label htmlFor="notes"></label>
+                      <textarea
+                        className="notes-form-input"
+                        name={item._id}
+                        id="notes"
+                        ref={register}
+                        defaultValue={item.notes}
+                        maxLength="100"
+                        disabled={formEnabled[index]}
+                      />
+                      {!formEnabled[index] && (
+                        <button className="notes-form-submit pr-0">
+                          <span className="icon-iconmonstr-arrow-right-circle-thin b-icon b-icon--send-notes">
+                            <span className="path1"></span>
+                            <span className="path2"></span>
+                          </span>
+                        </button>
+                      )}
+                    </form>
+                  </div>
+                </div>
+                <div className="col-2 d-flex flex-column justify-content-between">
+                  <button
+                    onClick={() => {
+                      const food_id = { id: item._id };
+                      deleteDiary(food_id).then((data) => {
+                        setUser(data.data);
+                      });
+                    }}
+                    className="icon-letter-x b-icon b-icon--remove-item b-btn-icon"
+                  ></button>
+                  <button
+                    onClick={() => {
+                      enableNotesForm(index);
+                    }}
+                    className="icon-pen b-icon b-btn-icon pb-1"
+                  ></button>
                 </div>
               </div>
-              <div className="col-2 d-flex flex-column justify-content-between">
-                <button
-                  onClick={() => {
-                    const food_id = { id: item._id };
-                    deleteDiary(food_id).then((data) => {
-                      setUser(data.data);
-                    });
-                  }}
-                  className="icon-letter-x b-icon b-btn-icon"
-                ></button>
-                <button
-                  onClick={() => {
-                    enableNotesForm(index);
-                  }}
-                  className="icon-pen b-icon b-btn-icon pb-1"
-                ></button>
-              </div>
             </div>
+          ))}
+          <div className="mx-3">
+            {!diaryEmpty && (
+              <button
+                className="b-btn b-btn mt-2 mb-3"
+                onClick={() => diaryFood.length && setStep(2)}
+              >
+                Generar informe
+              </button>
+            )}
           </div>
-        ))}
-        <div className="mx-3">
-          {!diaryEmpty && (
-            <button
-              className="b-btn b-btn mt-2 mb-3"
-              onClick={() => diaryFood.length && setStep(2)}
-            >
-              Generar informe
-            </button>
-          )}
         </div>
       </div>
     </>

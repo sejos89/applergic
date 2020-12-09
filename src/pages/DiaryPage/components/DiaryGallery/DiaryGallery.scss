@@ -12,3 +12,18 @@
   resize: none;
   font-size: 1.25rem;
 }
+
+.backdrop-diarygallery-1 {
+  height: 100vh;
+  // width: 100%;
+  position: relative;
+}
+
+.backdrop-diarygallery-2 {
+  width: 100%;
+  max-width: 414px;
+  height: 100vh;
+  background-color: $color-brownishGrey-alpha;
+  position: absolute;
+  z-index: 50;
+}

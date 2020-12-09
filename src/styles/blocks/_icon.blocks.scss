@@ -6,6 +6,18 @@
     font-size: 2.5rem;
   }
 
+  &--remove-item {
+    font-size: 2rem;
+    font-weight: 800;
+    color: red;
+  }
+
+  &--send-notes {
+    font-size: 2.5rem;
+    font-weight: 600;
+    color: $color-green-check;
+  }
+
   &--4rem {
     font-size: 4rem;
   }

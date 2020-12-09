@@ -163,7 +163,7 @@ export default function FavoriteGallery() {
                     setUser(data.data);
                   });
                 }}
-                className="icon-letter-x b-icon b-btn-icon"
+                className="icon-letter-x b-icon b-icon--remove-item b-btn-icon"
               ></button>
               <span
                 onClick={() => {
