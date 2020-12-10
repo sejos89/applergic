@@ -14,7 +14,9 @@ export default function DiaryReport() {
 
   let result = 0;
   let matches_allergens = [];
-  const showScanResult = (item, user_allergens) => {
+  const showScanResult = (item, user_allergensObj) => {
+    const user_allergens = user_allergensObj.map((allergen) => allergen._id);
+
     if (!user_allergens || user_allergens.length === 0) {
       return;
     }
